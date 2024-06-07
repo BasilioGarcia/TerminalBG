@@ -1,4 +1,4 @@
-# terminalBG
+# TerminalBG
 
 terminalBG es una pequeña biblioteca en JavaScript que utilizo en mis proyectos para dar formato a los
 mensajes de la consola del navegador.
@@ -8,4 +8,4 @@ Dispone de dos versiones, la versión de JavaScript clásico y la versión para 
 con **_import module_**.
 
 # Manual
-Está disponible un manual online con ejemplos **[AQUÍ](https://basiliogarcia.github.io/terminalBG/)**.
+Está disponible un manual online con ejemplos **[AQUÍ](https://basiliogarcia.github.io/TerminalBG/)**.
