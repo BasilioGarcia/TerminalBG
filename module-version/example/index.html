@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/main.js" type="module"></script>
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+    <main>
+        <text>
+            Pulsa <f12>F12</f12> para abrir la consola, selecciona un ejemplo y presiona el botón.
+        </text>
+        <selection>
+            <label for="examples">Ejemplos</label>
+            <select id="examples">
+                <option value="1">Crudo</option>
+                <option value="2">Color del texto</option>
+                <option value="3">Color de fondo</option>
+                <option value="4">Limpiar</option>
+                <option value="5">Tamaño</option>
+                <option value="6">Ancho</option>
+            </select>
+        </selection>
+        <button>¡Púlsame!</button>
+        <result>
+            <item id="item-1">
+                <c1>tBG</c1><c2>(</c2><c3>'Hello world!'</c3><c2>).</c2><c4>_</c4><c2>();</c2>
+            </item>
+            <item id="item-2">
+                <c1>tBG</c1><c2>(</c2><c3>'Hello world!'</c3><c2>)
+                <br>
+                .</c2><c4>color</c4><c2>(</c2><c3>'#ff0000'</c3><c2>).</c2><c4>_</c4><c2>();</c2>
+            </item>
+            <item id="item-3">
+                <c1>tBG</c1><c2>(</c2><c3>'Hello world!'</c3><c2>).</c2><c4>bcolor</c4><c2>(</c2><c3>'#0000ff'</c3><c2>).</c2><c4>_</c4><c2>();</c2>
+            </item>
+            <item id="item-4">
+                4 <c1>tBG</c1><c2>().</c2><c4>clean</c4><c2>();</c2>
+            </item>
+            <item id="item-5">
+                5
+            </item>
+            <item id="item-6">
+                6
+            </item>
+        </result>
+    </main>
+</body>
+</html>
