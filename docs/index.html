@@ -40,11 +40,65 @@
                     </code-body>
                 </code>
             </installation>
+            <basic>
+                <h2>Uso básico</h2>
+                <p>
+                    <b>tBG()</b> es el constructor de la biblioteca, se le envía por referencia el mensaje que se quiere
+                    mostrar.<br>
+                    <b>_()</b> es es el método para mostrar el mensaje en la consola.
+                </p>
+                <code>
+                    <code-title>Uso básico</code-title>
+                    <code-body>
+                        <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c4>_</c4><c2>();</c2>
+                    </code-body>
+                </code>
+            </basic>
             <commands>
                 <h2>Comandos</h2>
                 <command>
-                    <command-title><span>Iniciar</span></command-title>
-
+                    <command-title>
+                        <span>color</span>
+                        <button>mostrar en la consola</button>
+                    </command-title>
+                    <command-description>
+                        Cambia el color del texto al que se envía por referencia. Admite cualquier formato válido de
+                        colores CSS.
+                    </command-description>
+                    <code>
+                        <code-body>
+                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>color</c5><c2>(<c3>"#FF0000"</c3>).</c2><c4>_</c4><c2>();</c2>
+                        </code-body>
+                    </code>
+                </command>
+                <command>
+                    <command-title>
+                        <span>bcolor</span>
+                        <button>mostrar en la consola</button>
+                    </command-title>
+                    <command-description>
+                        Cambia el color de fondo al que se envía por referencia. Admite cualquier formato válido de
+                        colores CSS.
+                    </command-description>
+                    <code>
+                        <code-body>
+                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>bcolor</c5><c2>(<c3>"azul"</c3>).</c2><c4>_</c4><c2>();</c2>
+                        </code-body>
+                    </code>
+                </command>
+                <command>
+                    <command-title>
+                        <span>clear</span>
+                        <button>mostrar en la consola</button>
+                    </command-title>
+                    <command-description>
+                        Limpia los mensajes de la consola.
+                    </command-description>
+                    <code>
+                        <code-body>
+                            <c1>tBG</c1><c2>(</c2><c2>).</c2><c5>clear</c5><c2>();</c2>
+                        </code-body>
+                    </code>
                 </command>
             </commands>
         </manual>

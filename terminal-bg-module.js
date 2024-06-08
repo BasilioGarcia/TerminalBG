@@ -32,7 +32,7 @@ class TerminalBG {
         return this;
     }
 
-    clean() {
+    clear() {
         console.clear();
         return this;
     }

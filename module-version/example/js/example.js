@@ -59,7 +59,7 @@ function example3() {
 }
 
 function example4() {
-    tBG().clean();
+    tBG().clear();
 }
 
 function example5() {

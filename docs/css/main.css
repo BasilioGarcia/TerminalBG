@@ -46,7 +46,7 @@ manual {
     h2 {
         font-family: "Jost", sans-serif;
         font-weight: 700;
-        padding-bottom: 5px;
+        padding: 30px 0 15px 0;
 
         &::after {
             content: '_' ;
@@ -88,8 +88,9 @@ manual {
         background-color: #000;
         overflow: auto;
         width: calc(100% + 30px);
-        padding: 10px;
+        padding: 15px;
         margin: 0 -15px 10px -15px;
+        box-shadow: -7px 0 15px -5px #000;
 
         code-title {
             display: block;
@@ -103,16 +104,51 @@ manual {
     }
 
     command {
+        display: block;
+        margin-bottom: 40px;
+        border-left: solid 1px #000;
+        border-right: solid 1px #000;
+
         command-title {
-            display: block;
+            display: flex;
             width: 100%;
-            border-bottom: solid 1px #000;
+            /*border-bottom: solid 1px #000;*/
+            border-top: solid 1px #000;
+            justify-content: space-between;
 
             span {
+                display: inline-block;
+                width: auto;
                 background-color: #000;
                 color: #FFF;
-                padding: 0 5px;
+                padding: 10px 15px;
+                box-shadow: -7px 0 15px -5px #000;
             }
+
+            button {
+                display: inline-block;
+                width: auto;
+                border: solid 1px #000;
+                background-color: #a52a2a;
+                color: white;
+                font-size: clamp(14px,2vw,16px);
+                text-shadow: #400c0c 1px 0 20px;
+                cursor: pointer;
+                padding: 8px 16px;
+                border-radius: 5px;
+                box-shadow: -7px 0 15px -5px #000;
+                transition: text-shadow 0.5s ease;
+
+                &:hover{
+                    background-color: #c13c3c;
+                    text-shadow: #400c0c 1px 0 1px;
+                }
+            }
+        }
+
+        command-description {
+            display: block;
+            padding: 10px 15px;
         }
     }
 
@@ -122,12 +158,9 @@ manual {
 
 @media (min-width: 768px) {
     manual {
-        installation {
-
             code {
                 width: 100%;
                 margin: 0 0 10px 0;
             }
-        }
     }
 }
