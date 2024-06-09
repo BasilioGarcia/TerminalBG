@@ -4,8 +4,8 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>terminalBG</title>
-        <script src="./js/main.js" type="module"></script>
         <link rel="stylesheet" href="./css/main.css" />
+        <script src="./js/main.js" type="module"></script>
     </head>
     <body>
         <manual>
@@ -43,7 +43,7 @@
             <basic>
                 <h2>Uso básico</h2>
                 <p>
-                    <b>tBG()</b> es el constructor de la biblioteca, se le envía por referencia el mensaje que se quiere
+                    <b>tBG()</b> es el constructor de la biblioteca, se le envía por un argumento el mensaje que se quiere
                     mostrar.<br>
                     <b>_()</b> es es el método para mostrar el mensaje en la consola.
                 </p>
@@ -56,13 +56,17 @@
             </basic>
             <commands>
                 <h2>Comandos</h2>
+                <p>
+                    Los botones <b>ejecutar en la consola</b> muestran el resultado de su correspondiente ejemplo en la consola del navegador
+                    (pulsar F12 para abrir las herramientas de desarrollo).
+                </p>
                 <command>
                     <command-title>
                         <span>color</span>
-                        <button>mostrar en la consola</button>
+                        <button>ejecutar en la consola</button>
                     </command-title>
                     <command-description>
-                        Cambia el color del texto al que se envía por referencia. Admite cualquier formato válido de
+                        Cambia el color del texto al que se envía mediante un argumento. Admite cualquier formato válido de
                         colores CSS.
                     </command-description>
                     <code>
@@ -74,10 +78,10 @@
                 <command>
                     <command-title>
                         <span>bcolor</span>
-                        <button>mostrar en la consola</button>
+                        <button>ejecutar en la consola</button>
                     </command-title>
                     <command-description>
-                        Cambia el color de fondo al que se envía por referencia. Admite cualquier formato válido de
+                        Cambia el color de fondo al que se envía mediante un argumento. Admite cualquier formato válido de
                         colores CSS.
                     </command-description>
                     <code>
@@ -89,7 +93,7 @@
                 <command>
                     <command-title>
                         <span>clear</span>
-                        <button>mostrar en la consola</button>
+                        <button>ejecutar en la consola</button>
                     </command-title>
                     <command-description>
                         Limpia los mensajes de la consola.
