@@ -53,13 +53,26 @@
                     </code-body>
                 </code>
             </basic>
-            <commands>
+            <advanced>
+                <h2>Llamar a múltiples métodos</h2>
+                <p>
+                    La biblioteca permite encadenar métodos en su llamada, se van resolviéndo en orden, de
+                    izquierda a derecha.
+                </p>
+                <code>
+                    <code-title>Múltiples métodos</code-title>
+                    <code-body>
+                        <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>color</c5><c2>(</c2><c3>"#FF0000"</c3><c2>).</c2><c5>bcolor</c5><c2>(</c2><c3>"#00FF00"</c3><c2>).</c2><c4>_</c4><c2>();</c2>
+                    </code-body>
+                </code>
+            </advanced>
+            <div class="commands">
                 <h2>Comandos</h2>
                 <p>
                     Los botones <b>ejecutar en la consola</b> muestran el resultado de su correspondiente ejemplo en la consola del navegador
                     (pulsar F12 para abrir las herramientas de desarrollo).
                 </p>
-                <command>
+                <div class="command">
                     <command-title>
                         <span>color</span>
                         <button data-example="color">ejecutar en la consola</button>
@@ -73,8 +86,8 @@
                             <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>color</c5><c2>(<c3>"#FF0000"</c3>).</c2><c4>_</c4><c2>();</c2>
                         </code-body>
                     </code>
-                </command>
-                <command>
+                </div>
+                <div class="command">
                     <command-title>
                         <span>bcolor</span>
                         <button data-example="bcolor">ejecutar en la consola</button>
@@ -88,8 +101,8 @@
                             <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>bcolor</c5><c2>(<c3>"blue"</c3>).</c2><c4>_</c4><c2>();</c2>
                         </code-body>
                     </code>
-                </command>
-                <command>
+                </div>
+                <div class="command">
                     <command-title>
                         <span>clear</span>
                         <button data-example="clear">ejecutar en la consola</button>
@@ -102,8 +115,8 @@
                             <c1>tBG</c1><c2>(</c2><c2>).</c2><c5>clear</c5><c2>();</c2>
                         </code-body>
                     </code>
-                </command>
-                <command>
+                </div>
+                <div class="command">
                     <command-title>
                         <span>size</span>
                         <button data-example="size">ejecutar en la consola</button>
@@ -117,7 +130,8 @@
                             <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>size</c5><c2>(<c3>"10rem"</c3>).</c2><c4>_</c4><c2>();</c2>
                         </code-body>
                     </code>
-            </commands>
+                </div>
+            </div>
         </manual>
         <script src="./js/main.js" type="module"></script>
     </body>

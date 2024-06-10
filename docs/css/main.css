@@ -103,7 +103,7 @@ manual {
         }
     }
 
-    command {
+    .command {
         display: block;
         margin-bottom: 40px;
         border-left: solid 1px #000;
