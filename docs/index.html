@@ -66,27 +66,19 @@
                     </code-body>
                 </code>
             </advanced>
+            <templates>
+                <h2>Templates</h2>
+                <p>
+                    Se pueden crear templates añadiendo entradas al objeto de la constante <b>templates</b>. La clave de la nueva entrada
+                    será el nombre del template y el valor debe de ser código CSS válido para la consola del navegador.
+                </p>
+            </templates>
             <div class="commands">
                 <h2>Comandos</h2>
                 <p>
                     Los botones <b>ejecutar en la consola</b> muestran el resultado de su correspondiente ejemplo en la consola del navegador
                     (pulsar F12 para abrir las herramientas de desarrollo).
                 </p>
-                <div class="command">
-                    <command-title>
-                        <span>color</span>
-                        <button data-example="color">ejecutar en la consola</button>
-                    </command-title>
-                    <command-description>
-                        Cambia el color del texto al que se envía mediante un argumento. Admite cualquier formato válido de
-                        colores CSS.
-                    </command-description>
-                    <code>
-                        <code-body>
-                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>color</c5><c2>(<c3>"#FF0000"</c3>).</c2><c4>_</c4><c2>();</c2>
-                        </code-body>
-                    </code>
-                </div>
                 <div class="command">
                     <command-title>
                         <span>bcolor</span>
@@ -99,6 +91,20 @@
                     <code>
                         <code-body>
                             <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>bcolor</c5><c2>(<c3>"blue"</c3>).</c2><c4>_</c4><c2>();</c2>
+                        </code-body>
+                    </code>
+                </div>
+                <div class="command">
+                    <command-title>
+                        <span>bold</span>
+                        <button data-example="bold">ejecutar en la consola</button>
+                    </command-title>
+                    <command-description>
+                        Pone el texto en negrita.
+                    </command-description>
+                    <code>
+                        <code-body>
+                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>bold</c5><c2>(<c3></c3>).</c2><c4>_</c4><c2>();</c2>
                         </code-body>
                     </code>
                 </div>
@@ -118,6 +124,63 @@
                 </div>
                 <div class="command">
                     <command-title>
+                        <span>color</span>
+                        <button data-example="color">ejecutar en la consola</button>
+                    </command-title>
+                    <command-description>
+                        Cambia el color del texto al que se envía mediante un argumento. Admite cualquier formato válido de
+                        colores CSS.
+                    </command-description>
+                    <code>
+                        <code-body>
+                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>color</c5><c2>(<c3>"#FF0000"</c3>).</c2><c4>_</c4><c2>();</c2>
+                        </code-body>
+                    </code>
+                </div>
+                <div class="command">
+                    <command-title>
+                        <span>px</span>
+                        <button data-example="px">ejecutar en la consola</button>
+                    </command-title>
+                    <command-description>
+                        Recibe un valor numérico y establece el tamaño de la fuente a ese valor en pixels.
+                    </command-description>
+                    <code>
+                        <code-body>
+                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>px</c5><c2>(<c3>17</c3>).</c2><c4>_</c4><c2>();</c2>
+                        </code-body>
+                    </code>
+                </div>
+                <div class="command">
+                    <command-title>
+                        <span>rem</span>
+                        <button data-example="rem">ejecutar en la consola</button>
+                    </command-title>
+                    <command-description>
+                        Recibe un valor numérico y establece el tamaño de la fuente a ese valor en la unidad REM.
+                    </command-description>
+                    <code>
+                        <code-body>
+                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>rem</c5><c2>(<c3>20</c3>).</c2><c4>_</c4><c2>();</c2>
+                        </code-body>
+                    </code>
+                </div>
+                <div class="command">
+                    <command-title>
+                        <span>shadow</span>
+                        <button data-example="shadow">ejecutar en la consola</button>
+                    </command-title>
+                    <command-description>
+                        Establece la propiedad <b>text-shadow</b> con el valor pasado como argumento.
+                    </command-description>
+                    <code>
+                        <code-body>
+                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>shadow</c5><c2>(<c3>"1px 1px 2px yellow"</c3>).</c2><c4>_</c4><c2>();</c2>
+                        </code-body>
+                    </code>
+                </div>
+                <div class="command">
+                    <command-title>
                         <span>size</span>
                         <button data-example="size">ejecutar en la consola</button>
                     </command-title>
@@ -128,6 +191,20 @@
                     <code>
                         <code-body>
                             <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>size</c5><c2>(<c3>"10rem"</c3>).</c2><c4>_</c4><c2>();</c2>
+                        </code-body>
+                    </code>
+                </div>
+                <div class="command">
+                    <command-title>
+                        <span>template</span>
+                        <button data-example="template">ejecutar en la consola</button>
+                    </command-title>
+                    <command-description>
+                        Carga el template con el nombre que se le envía por argumento.
+                    </command-description>
+                    <code>
+                        <code-body>
+                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>template</c5><c2>(<c3>"matrix"</c3>).</c2><c4>_</c4><c2>();</c2>
                         </code-body>
                     </code>
                 </div>

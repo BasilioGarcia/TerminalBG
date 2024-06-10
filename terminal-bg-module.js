@@ -37,13 +37,13 @@ class TerminalBG {
         return this;
     }
 
-    default(value) {
-        this._default = value;
+    color(value) {
+        this.css += `color: ${value}; `;
         return this;
     }
 
-    color(value) {
-        this.css += `color: ${value}; `;
+    default(value) {
+        this._default = value;
         return this;
     }
 
@@ -57,8 +57,8 @@ class TerminalBG {
         return this;
     }
 
-    template(name) {
-        this.css = this.templates[name];
+    shadow(value) {
+        this.css += `text-shadow: ${value}; `;
         return this;
     }
 
@@ -69,6 +69,11 @@ class TerminalBG {
 
     size(value) {
         this.css += `font-size: ${value}; `;
+        return this;
+    }
+
+    template(name) {
+        this.css = this.templates[name];
         return this;
     }
 

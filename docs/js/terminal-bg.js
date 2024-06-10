@@ -32,6 +32,10 @@ class TerminalBG {
         return this;
     }
 
+    bold() {
+        return this.weight(700);
+    }
+
     clear() {
         console.clear();
         return this;
@@ -52,6 +56,21 @@ class TerminalBG {
         return this;
     }
 
+    save(name) {
+        this.templates[name] = this.css;
+        return this;
+    }
+
+    shadow(value) {
+        this.css += `text-shadow: ${value}; `;
+        return this;
+    }
+
+    size(value) {
+        this.css += `font-size: ${value}; `;
+        return this;
+    }
+
     rem(value) {
         this.css += `font-size: ${value}rem; `;
         return this;
@@ -62,13 +81,8 @@ class TerminalBG {
         return this;
     }
 
-    save(name) {
-        this.templates[name] = this.css;
-        return this;
-    }
-
-    size(value) {
-        this.css += `font-size: ${value}; `;
+    weight (value = 400) {
+        this.css += `font-weight: ${value}; `;
         return this;
     }
 
