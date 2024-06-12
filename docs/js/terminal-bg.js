@@ -1,30 +1,49 @@
 const templates = {
-    '_default': '',
-    'matrix': 'color: #00FF41; ' +
-        'background-color: #000000; ' +
-        'text-shadow: 0 0 3px #00FF41,0 0 5px #00FF41,0 0 5px #00FF41; ' +
-        'padding: 200px; ',
+    '_default': templateDefault,
+    'matrix': templateMatrix,
 }
+
+function templateDefault(txt) {
+    return tBG(txt, false)
+        .bcolor('#000')
+        .color('#be16e8');
+}
+
+function templateMatrix (txt) {
+
+    return tBG(txt)
+        .bcolor('#000000')
+        .color('#00FF41')
+        .padding("200px")
+        .shadow('0 0 3px #00FF41,0 0 5px #00FF41,0 0 5px #00FF41')
+
+}
+
+
+// sobreescribir default
+// añadir template al vuelo
+// datetime()
+// text()
 
 class TerminalBG {
     constructor() {
         this.templates = templates;
-        this._default = '';
-
+        this._default = (this.templates['_default']) ? this.templates['_default'] : '';
     }
 
-    initialize(txt = '') {
+    initialize(txt = '', loadDefault = true) {
         this.txt = txt;
-        this.css = '' + this._default;
+        this.css = '';
+
+        if (this._default !== '' && loadDefault === true) {
+            this.templates['_default'](this.txt);
+        }
+
         return this;
     }
 
     _() {
         console.log(`%c${this.txt}`, this.css);
-    }
-
-    _loadTemplates() {
-
     }
 
     bcolor(value) {
@@ -41,23 +60,18 @@ class TerminalBG {
         return this;
     }
 
-    default(value) {
-        this._default = value;
-        return this;
-    }
-
     color(value) {
         this.css += `color: ${value}; `;
         return this;
     }
 
-    px(value) {
-        this.css += `font-size: ${value}px; `;
+    padding(value) {
+        this.css += `padding: ${value}; `;
         return this;
     }
 
-    save(name) {
-        this.templates[name] = this.css;
+    px(value) {
+        this.css += `font-size: ${value}px; `;
         return this;
     }
 
@@ -77,8 +91,7 @@ class TerminalBG {
     }
 
     template(name) {
-        this.css = this.templates[name];
-        return this;
+        return this.templates[name](this.txt);
     }
 
     weight (value = 400) {
@@ -93,13 +106,11 @@ class TerminalBG {
 
 }
 
-/* time, date */
-
-export function terminalBG(txt) {
+export function terminalBG(txt, loadDefault) {
     if (!TerminalBG.instance) {
         TerminalBG.instance = new TerminalBG();
     }
-    return TerminalBG.instance.initialize(txt);
+    return TerminalBG.instance.initialize(txt, loadDefault);
 }
 
 if (typeof window !== 'undefined') {

@@ -69,15 +69,26 @@
             <templates>
                 <h2>Templates</h2>
                 <p>
-                    Se pueden crear templates añadiendo entradas al objeto de la constante <b>templates</b>. La clave de la nueva entrada
-                    será el nombre del template y el valor debe de ser código CSS válido para la consola del navegador.
+                    Se pueden crear templates modificando el archivo de la biblioteca, añadiendo entradas al objeto de la constante <b>templates</b>. La clave de la nueva entrada
+                    será el nombre del template, y el valor de la entrada será una función que ejecute las instrucciones del template.
+                </p>
+                <code>
+                    <code-title>Añadir un template llamado 'matrix'</code-title>
+                    <code-body>
+                        <c4>const</c4><c2> templates = {</c2><br>
+                        <c3>'matrix'</c3><c2>:</c2> <c5>templateMatrix</c5><c2>,</c2><br>
+                        <c2>}</c2>
+                    </code-body>
+                </code>
+                <p>
+                    La función asignada debe de tener la siguiente estructura, recibir un argumento, ejecutar
                 </p>
             </templates>
             <div class="commands">
                 <h2>Comandos</h2>
                 <p>
                     Los botones <b>ejecutar en la consola</b> muestran el resultado de su correspondiente ejemplo en la consola del navegador
-                    (pulsar F12 para abrir las herramientas de desarrollo).
+                    (pulsa F12 para abrir las herramientas de desarrollo).
                 </p>
                 <div class="command">
                     <command-title>
@@ -134,6 +145,20 @@
                     <code>
                         <code-body>
                             <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>color</c5><c2>(<c3>"#FF0000"</c3>).</c2><c4>_</c4><c2>();</c2>
+                        </code-body>
+                    </code>
+                </div>
+                <div class="command">
+                    <command-title>
+                        <span>padding</span>
+                        <button data-example="padding">ejecutar en la consola</button>
+                    </command-title>
+                    <command-description>
+                        Recibe un valor numérico y establece el padding a ese valor en pixels.
+                    </command-description>
+                    <code>
+                        <code-body>
+                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>padding</c5><c2>(<c3>"200px"</c3>).</c2><c4>_</c4><c2>();</c2>
                         </code-body>
                     </code>
                 </div>

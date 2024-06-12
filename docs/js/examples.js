@@ -11,6 +11,7 @@ function buttonClick(event) {
         'bold': exampleBold,
         'clear': exampleClear,
         'color': exampleColor,
+        'padding': examplePadding,
         'px': examplePx,
         'rem': exampleRem,
         'shadow': exampleShadow,
@@ -39,6 +40,10 @@ function exampleClear () {
 
 function exampleColor () {
     tBG('texto de salida').color("#FF0000")._();
+}
+
+function examplePadding () {
+    tBG('texto de salida').padding("200px")._();
 }
 
 function examplePx () {
