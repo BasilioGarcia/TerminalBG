@@ -1,15 +1,25 @@
 const templates = {
-    '_default': templateDefault,
-    'matrix': templateMatrix,
+    '_default': {
+        'init': templateDefaultInit,
+        'finish': templateDefaultFinish,
+    },
+    'matrix': {
+        'init': templateMatrixInit,
+        'finish': templateMatrixFinish,
+    }
 }
 
-function templateDefault(txt) {
+function templateDefaultInit(txt) {
     return tBG(txt, false)
         .bColor('#000')
         .color('#be16e8');
 }
 
-function templateMatrix (txt) {
+function templateDefaultFinish(txt) {
+    console.log('finish default');
+}
+
+function templateMatrixInit (txt) {
 
     return tBG(txt)
         .bColor('#000000')
@@ -19,30 +29,25 @@ function templateMatrix (txt) {
 
 }
 
-// setVar('name', 'value') => luego en el script con eso hace cosas.
-// getVar('') o getVars('') variable individual o array? 2 métodos
+function templateMatrixFinish (txt) {
+
+    console.log('matrix');
+
+}
 
 // tBG('Hola mundo!')._().template('matrix')._(); para hacer dibujos como barras
-
-/* dentro de la función del template un trozo de código, otra función, que se inicie en la salida?
-
-    '_default': {
-                'load': templateDefaultLoad,
-                'finish': templateDefaultFinish,
-                },
-
-*/
-
 // sobreescribir default
-// añadir template al vuelo
+// añadir template al vuelo, sin leer de la constante
 // datetime()
 // text()
 // breakpoint: marca de tiempo con un nombre y luego te dice la diferencia
+// el txt crearlo concatenando código y estilos y cada uno cargar un template
 
 class TerminalBG {
     constructor() {
         this.templates = templates;
-        this._default = (this.templates['_default']) ? this.templates['_default'] : '';
+        this._default = (this.templates['_default']['init']) ? this.templates['_default']['init'] : '';
+        this._loadFinishes = (this.templates['_default']['finish']) ? [this.templates['_default']['finish']] : [];
         this._array = {};
         this._var = {};
     }
@@ -52,13 +57,22 @@ class TerminalBG {
         this.css = '';
 
         if (this._default !== '' && loadDefault === true) {
-            this.templates['_default'](this.txt);
+            this.templates['_default']['init'](this.txt);
         }
 
         return this;
     }
 
     _() {
+
+        if (this._loadFinishes.length > 0) {
+
+            this._loadFinishes.forEach((item) => {
+                item(this.txt);
+            });
+
+        }
+
         console.log(`%c${this.txt}`, this.css);
         return this;
     }
@@ -130,7 +144,11 @@ class TerminalBG {
     }
 
     template(name) {
-        return this.templates[name](this.txt);
+        if (this.templates[name]['finish'] && !this._loadFinishes.includes(this.templates[name]['finish'])) {
+            this._loadFinishes.push(this.templates[name]['finish']);
+        }
+
+        return this.templates[name]['init'](this.txt);
     }
 
     weight (value = 400) {
