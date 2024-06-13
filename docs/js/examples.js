@@ -27,7 +27,7 @@ function buttonClick(event) {
 }
 
 function exampleBcolor () {
-    tBG('texto de salida').bcolor("blue")._();
+    tBG('texto de salida').bColor("blue")._();
 }
 
 function exampleBold () {
