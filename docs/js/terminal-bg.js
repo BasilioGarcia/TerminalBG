@@ -25,23 +25,39 @@ function templateMatrixInit (txt) {
         .bColor('#000000')
         .color('#00FF41')
         .padding("200px")
-        .shadow('0 0 3px #00FF41,0 0 5px #00FF41,0 0 5px #00FF41')
+        .shadow('0 0 3px #00FF41,0 0 5px #00FF41,0 0 5px #00FF41');
 
 }
 
 function templateMatrixFinish (txt) {
+    const date = new Date();
 
-    console.log('matrix');
+    const hours = date.getHours().toString().padStart(2, '0');
+    const minutes = date.getMinutes().toString().padStart(2, '0');
+    const seconds = date.getSeconds().toString().padStart(2, '0');
+    const milliseconds = date.getMilliseconds().toString().padStart(3, '0');
+
+    const time = `${hours}:${minutes}:${seconds}.${milliseconds}`;
+
+    tBG(`>${time} - ${txt} `);
+    console.log('finish matrix');
 
 }
 
+// poner en la documentación que navegadores soportan la propiedad
+// padding en firefox necesita display block;
 // tBG('Hola mundo!')._().template('matrix')._(); para hacer dibujos como barras
-// sobreescribir default
 // añadir template al vuelo, sin leer de la constante
 // datetime()
 // text()
 // breakpoint: marca de tiempo con un nombre y luego te dice la diferencia
 // el txt crearlo concatenando código y estilos y cada uno cargar un template
+// emojis
+// border
+// br retorno de carro salto de linea
+// height
+// text-align
+// display: flex; height: 50px; align-items: center; justify-content: center;
 
 class TerminalBG {
     constructor() {
@@ -54,7 +70,7 @@ class TerminalBG {
 
     initialize(txt = '', loadDefault = true) {
         this.txt = txt;
-        this.css = '';
+        this.css = 'display: inline-block;';
 
         if (this._default !== '' && loadDefault === true) {
             this.templates['_default']['init'](this.txt);
@@ -86,6 +102,16 @@ class TerminalBG {
         return this.weight(700);
     }
 
+    bRadius(value) {
+        this.css += `border-radius: ${value}; `;
+        return this;
+    }
+
+    border(value) {
+        this.css += `border: ${value}; `;
+        return this;
+    }
+
     clear() {
         console.clear();
         return this;
@@ -103,6 +129,21 @@ class TerminalBG {
     getVar(name) {
         return this._var[name];
     }
+
+    img(url, size = 100) {
+        const _img = new Image();
+        _img.src = url;
+        _img.onload = () => {
+            const style = [
+                'font-size: 1px;',
+                'padding: ' + (_img.height/100*size)/2 + 'px ' + (_img.width/100*size)/2 + 'px;',
+                'background: url('+ url +') no-repeat;',
+                'background-size: contain;',
+                'display: inline-block;',
+            ].join(' ');
+            console.log('%c ', style + this.css);
+        };
+    };
 
     padding(value) {
         this.css += `padding: ${value}; `;

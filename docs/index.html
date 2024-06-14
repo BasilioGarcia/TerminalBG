@@ -71,7 +71,12 @@
                 <p>
                     Estar utilizando todo el rato una ristra de comandos encadenados es muy molesto y no tendría sentido,
                     la intención de la biblioteca es usar templates. Los templates funcionan como un conjunto de macros
-                    de comandos y código JavaScript.<br>
+                    de comandos y código JavaScript.
+                </p>
+                <p>
+                    Puedes ver los comandos disponibles de terminalBG en la sección <a href="#commands">Comandos</a>.
+                </p>
+                <p>
                     Se pueden crear templates modificando el archivo de la biblioteca, añadiendo entradas al objeto de la constante <b>templates</b>. La clave de la nueva entrada
                     será el nombre del template, y el valor de la entrada será una función que ejecute las instrucciones del template.
                 </p>
@@ -87,7 +92,7 @@
                     La función asignada debe de tener la siguiente estructura, recibir un argumento, ejecutar
                 </p>
             </templates>
-            <div class="commands">
+            <div class="commands" id="commands">
                 <h2>Comandos</h2>
                 <p>
                     Los botones <b>ejecutar en la consola</b> muestran el resultado de su correspondiente ejemplo en la consola del navegador
@@ -95,11 +100,11 @@
                 </p>
                 <div class="command">
                     <command-title>
-                        <span>bcolor</span>
+                        <span>bColor</span>
                         <button data-example="bcolor">ejecutar en la consola</button>
                     </command-title>
                     <command-description>
-                        Cambia el color de fondo al que se envía mediante un argumento. Admite cualquier formato válido de
+                        Cambia el color de fondo mediante el argumento que se envía. Admite cualquier formato válido de
                         colores CSS.
                     </command-description>
                     <code>
@@ -119,6 +124,34 @@
                     <code>
                         <code-body>
                             <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>bold</c5><c2>(<c3></c3>).</c2><c4>_</c4><c2>();</c2>
+                        </code-body>
+                    </code>
+                </div>
+                <div class="command">
+                    <command-title>
+                        <span>border</span>
+                        <button data-example="border">ejecutar en la consola</button>
+                    </command-title>
+                    <command-description>
+                        Establece la propiedad border con formato CSS mediante el argumento que se envía.
+                    </command-description>
+                    <code>
+                        <code-body>
+                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>border</c5><c2>(<c3>"solid 3px orange"</c3>).</c2><c4>_</c4><c2>();</c2>
+                        </code-body>
+                    </code>
+                </div>
+                <div class="command">
+                    <command-title>
+                        <span>bRadius</span>
+                        <button data-example="bradius">ejecutar en la consola</button>
+                    </command-title>
+                    <command-description>
+                        Establece la propiedad border-radius con formato CSS mediante el argumento que se envía.
+                    </command-description>
+                    <code>
+                        <code-body>
+                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>bRadius</c5><c2>(<c3>"10px"</c3>).</c2><c4>_</c4><c2>();</c2>
                         </code-body>
                     </code>
                 </div>
@@ -153,6 +186,22 @@
                 </div>
                 <div class="command">
                     <command-title>
+                        <span>img</span>
+                        <button data-example="img">ejecutar en la consola</button>
+                    </command-title>
+                    <command-description>
+                        Dibuja una imagen en la consola, se le envía como primer parámetro una imagen en base64, el segundo parámetro es opcional y establece el tamaño de la imagen en porcentaje.
+                    </command-description>
+                    <code>
+                        <code-body>
+                            <c4>const</c4><c2> img =</c2> <c3>"Código de la imagen en base64 aquí"</c3><c2>;</c2><br>
+                            <br>
+                            <c1>tBG</c1><c2>(</c2><c2>).</c2><c5>img</c5><c2>(<c2>img, <c3>150</c3></c2>);</c2>
+                        </code-body>
+                    </code>
+                </div>
+                <div class="command">
+                    <command-title>
                         <span>padding</span>
                         <button data-example="padding">ejecutar en la consola</button>
                     </command-title>
@@ -161,7 +210,7 @@
                     </command-description>
                     <code>
                         <code-body>
-                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>padding</c5><c2>(<c3>"200px"</c3>).</c2><c4>_</c4><c2>();</c2>
+                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>padding</c5><c2>(<c3>"20px"</c3>).</c2><c4>_</c4><c2>();</c2>
                         </code-body>
                     </code>
                 </div>
@@ -233,6 +282,21 @@
                     <code>
                         <code-body>
                             <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>template</c5><c2>(<c3>"matrix"</c3>).</c2><c4>_</c4><c2>();</c2>
+                        </code-body>
+                    </code>
+                </div>
+                <div class="command">
+                    <command-title>
+                        <span>width</span>
+                        <button data-example="width">ejecutar en la consola</button>
+                    </command-title>
+                    <command-description>
+                        Establece el width del mensaje de la consola. Admite cualquier formato de CSS
+                        válido para la propiedad width.
+                    </command-description>
+                    <code>
+                        <code-body>
+                            <c1>tBG</c1><c2>(</c2><c3>"texto de salida"</c3><c2>).</c2><c5>width</c5><c2>(<c3>"300px"</c3>).</c2><c4>_</c4><c2>();</c2>
                         </code-body>
                     </code>
                 </div>

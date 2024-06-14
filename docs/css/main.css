@@ -23,10 +23,6 @@ ul{
     list-style: none;
 }
 
-a{
-    text-decoration: none;
-}
-
 html, body{
     font-family: "Lato", sans-serif;
     font-size: clamp(15px,2vw,18px);
@@ -42,6 +38,15 @@ manual {
     display: block;
     text-align: left;
     padding: 15px;
+
+    a {
+        color: #a52a2a;
+        font-weight: bold;
+    }
+
+    a:hover{
+        color: #c13c3c;
+    }
 
     h2 {
         font-family: "Jost", sans-serif;
